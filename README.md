@@ -3,14 +3,30 @@
 <!--
 **CatIsa1/catisa1** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
-Here are some ideas to get you started:
+#include <iostream>
+#include <cstring>
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+using namespace std;
+
+bool isPalindrome(string str) {
+    int n = str.length();
+    for (int i = 0; i < n/2; i++) {
+        if (str[i] != str[n-i-1]) {
+            return false;
+        }
+    }
+    return true;
+}
+
+int main() {
+    string str;
+    cout << "Enter a string: ";
+    cin >> str;
+
+    if (isPalindrome(str)) {
+        cout << str << " is a palindrome." << endl;
+    } else {
+        cout << str << " is not a palindrome." << endl;
+    }
+    return 0;
+}
